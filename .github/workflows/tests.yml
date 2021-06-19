@@ -2,6 +2,8 @@ name: PyTest
 
 on:
   push:
+    branches:
+      - main
   pull_request:
     types: [opened, synchronize]
 
@@ -32,8 +34,6 @@ jobs:
     - name: Test with pytest
       run: |
         pipenv run pytest
-      with:
-        fail_ci_if_error: true
     - name: Upload coverage
       uses: codecov/codecov-action@v1
       with:
