@@ -1,0 +1,47 @@
+@startuml
+hide circle
+skinparam shadowing false
+' skinparam lineType ortho
+skinparam class {
+    BorderColor 005cc5
+    BackgroundColor bab8e6
+    FontName Courier
+}
+skinparam note {
+    BorderColor 005cc5
+    BackgroundColor bab8e6
+    FontSize 10
+}
+skinparam ArrowColor 005cc5
+
+legend
+|= Symbol |= Definition |
+| <&sun> | Required (not null) |
+| <&star> | Unique |
+| <&link-intact> | Relation |
+| <&key> | Primary key |
+| <&script> | Constraint |
+| <&signal> | Serial |
+endlegend
+
+entity problem {
+    <&key><&signal> id **int**
+    <&sun>   solution **varchar(?)**
+    <&sun>   text **text**
+--
+    The main problem table. //text// field is problem text in english.
+}
+
+entity translation {
+    <&sun><&link-intact> problem_id **int**
+    <&sun>   lang **char(2)**
+    <&sun>   text **text**
+--
+    <&script><&star> problem_id_lang_unique_together
+--
+    The problems translations. Can't create translation with empty text.
+    The problem_id and the lang must be unique together
+}
+
+translation::problem_id --> problem::id
+@enduml
