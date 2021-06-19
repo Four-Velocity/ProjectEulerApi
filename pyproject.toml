@@ -29,3 +29,21 @@ omit = [
     "site-packages",
 ]
 sort = "Cover"
+
+[tool.mypy]
+python_version = "3.9"
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+ignore_missing_imports = true
+follow_imports = "skip"
+strict_optional = true
+
+[[tool.mypy.overrides]]
+module = [
+    "tests.*",
+    "venv.*",
+    "site-packages.*"
+]
+ignore_errors = true
