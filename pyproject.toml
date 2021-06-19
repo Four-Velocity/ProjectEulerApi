@@ -1,0 +1,31 @@
+[tool.pytest.ini_options]
+addopts = [
+    "--cov=.",
+    "--cov-config=pyproject.toml",
+    "--cov-report=xml",
+    "--cov-report=term-missing",
+    "--doctest-modules",
+    "--doctest-continue-on-failure",
+    ]
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+filterwarnings = "ignore::DeprecationWarning"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+
+omit = [
+    "*/tests/*",
+    "*/mocks/*",
+    "*/tests.py",
+    "venv/*",
+    "site-packages",
+]
+sort = "Cover"
