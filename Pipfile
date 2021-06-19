@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = {version = "==0.65.2", extras = ["aiofiles", "email_validator", "jinja2", "python-multipart", "requests", "ujson", "uvicorn"]}
+toml = "==0.10.2"
+
+[dev-packages]
+pytest = ">=6.2"
+pytest-cov = ">=2.12"
+flake8 = ">=3.9"
+flake8-docstrings = ">=1.6"
+flake8-builtins = ">=1.5"
+bandit = ">=1.7"
+mypy = ">=0.902"
+black = "==21.6b0"
+isort = ">=5.8"
+mkdocs = ">=1.1.2"
+mkdocs-material = ">=7.1.4"
+mkdocstrings = ">=0.15.1"
+
+[requires]
+python_version = "3.9"
