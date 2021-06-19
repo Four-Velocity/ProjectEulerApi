@@ -164,15 +164,17 @@ The preferred way to do it is:
 * All code must be reformatted with black and isort
 * Use [gitmoji](https://gitmoji.dev/) in commits
 * To make a contribution:
-  * Create new branch and make a PR for it. Set its
-    status to WIP by adding 🚧 emoji to the beginning of the PR name. (Use
-    emoji, not emoji code)
+  * Create new branch and make a PR for it. Set its status to WIP by
+    adding 🚧 emoji to the beginning of the PR name. (Use emoji, not
+    emoji code)
   * Do everything you have to do
   * After all checks are passes merge you commit to the `main` branch
 
 
 ### Good to have in the future
 
-* Registration with captcha to avoid multiple request from users or add some throtling mechanism
+* Registration with captcha to avoid multiple request from users or add
+  some throtling mechanism
 * Token auth
 * Docker image to use project locally
+
