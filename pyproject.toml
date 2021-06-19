@@ -47,3 +47,14 @@ module = [
     "site-packages.*"
 ]
 ignore_errors = true
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    | docs
+    | tests
+)/
+'''
